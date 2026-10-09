@@ -54,10 +54,10 @@
 @media print{:root{color-scheme:light}}
 
 /* Self-hosted Chinese fonts keep reading consistent across devices. */
-@font-face{font-family:"Handbook Sans";src:url("fonts/handbook-regular.woff") format("woff");font-style:normal;font-weight:400;font-display:swap}
-@font-face{font-family:"Handbook Sans";src:url("fonts/handbook-semibold.woff") format("woff");font-style:normal;font-weight:500 900;font-display:swap}
+@font-face{font-family:"Handbook WenKai";src:url("fonts/wenkai-regular.woff") format("woff");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Handbook WenKai";src:url("fonts/wenkai-medium.woff") format("woff");font-style:normal;font-weight:500 900;font-display:swap}
 @media screen{
-  :root{font-family:"Handbook Sans","Noto Sans SC","PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;--ink:#26332d}
+  :root{font-family:"Handbook WenKai","LXGW WenKai","Kaiti SC","KaiTi","PingFang SC","Microsoft YaHei",sans-serif;--ink:#26332d}
   body{font-size:15px;line-height:1.65}
   .hero h1{font-family:inherit;letter-spacing:0;font-size:36px;line-height:1.5;font-weight:600}
   .brand{letter-spacing:0}.brand small{font-size:9px;letter-spacing:.9px}
@@ -85,7 +85,7 @@
   .answer-summary strong{font-size:12px;line-height:1.8;letter-spacing:0;margin-bottom:9px;font-weight:600;color:#596e4f}
   .reader .followup,.reader .pitfall{font-size:16px;line-height:1.95;padding:20px 22px;color:#39473a}
   .reader .pitfall{color:#746038}
-  .reader pre{font-family:"Cascadia Code","SFMono-Regular",Consolas,"Handbook Sans",monospace;font-size:14px;line-height:1.8;padding:22px;letter-spacing:0}
+  .reader pre{font-family:"Cascadia Code","SFMono-Regular",Consolas,"Handbook WenKai",monospace;font-size:14px;line-height:1.8;padding:22px;letter-spacing:0}
   .reader-top .eyebrow,.read-time,.reader-source p{font-size:12px;line-height:1.8}
   .reader-source a{font-size:14px;line-height:1.9;padding:6px 0}
   .check-button,.reader-pager a{font-size:13px;line-height:1.8}

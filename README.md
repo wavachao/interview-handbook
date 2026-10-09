@@ -10,7 +10,7 @@
 
 右上角“颜色模式”可选择深色、浅色或跟随系统。默认跟随系统，手动选择保存在当前浏览器中；打印和 PDF 使用浅色排版。
 
-网页使用随站点提供的 Noto Sans SC 中文黑体子集，正文桌面 17px、手机 16px，行高 1.95。字体依据 SIL Open Font License 1.1 分发，许可保存在 `dist/fonts/OFL.txt`。字体原始资料：[Google Fonts / Noto Sans SC](https://github.com/google/fonts/tree/main/ofl/notosanssc)。新增文章后可用 Python fonttools 运行 `build_fonts.py --source <NotoSansSC-variable-font-path>` 更新字体子集。
+网页使用随站点提供的霞鹜文楷字体子集，正文桌面 17px、手机 16px，行高 1.95，标题使用 Medium 字重。字体依据 SIL Open Font License 1.1 分发，许可保存在 `dist/fonts/OFL.txt`。字体原始资料：[霞鹜文楷官方仓库](https://github.com/lxgw/LxgwWenKai)。网页子集命名为 Handbook WenKai，保留原始字形和版权信息。新增文章后可用 Python fonttools 运行 `build_fonts.py --regular <LXGWWenKai-Regular.ttf> --medium <LXGWWenKai-Medium.ttf>` 更新字体子集。
 
 ## PDF
 
