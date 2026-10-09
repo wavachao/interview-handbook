@@ -52,3 +52,65 @@
   [data-theme="dark"] .float-tag{background:#1d2520;border-color:#4b6452;color:#b4c8a6}
 }
 @media print{:root{color-scheme:light}}
+
+/* Self-hosted Chinese fonts keep reading consistent across devices. */
+@font-face{font-family:"Handbook Sans";src:url("fonts/handbook-regular.woff") format("woff");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Handbook Sans";src:url("fonts/handbook-semibold.woff") format("woff");font-style:normal;font-weight:500 900;font-display:swap}
+@media screen{
+  :root{font-family:"Handbook Sans","Noto Sans SC","PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;--ink:#26332d}
+  body{font-size:15px;line-height:1.65}
+  .hero h1{font-family:inherit;letter-spacing:0;font-size:36px;line-height:1.5;font-weight:600}
+  .brand{letter-spacing:0}.brand small{font-size:9px;letter-spacing:.9px}
+  .nav-item{font-size:14px;gap:9px;padding:12px 10px;white-space:nowrap}.nav-count,.side-heading,.progress-caption,.progress-caption strong{font-size:12px}
+  .side-heading{letter-spacing:.5px}.side-bottom p,.plain-button,.sources-nav{font-size:12px;line-height:1.8}
+  .side-bottom{padding-top:28px}.chapter-label{margin-top:24px}
+  .breadcrumb,.search-form input,.theme-select,.button{font-size:13px}
+  .eyebrow{font-size:11px;letter-spacing:1px}
+  .hero p{font-size:16px;line-height:1.9}.hero-note{font-size:12px;line-height:1.8}
+  .stat p,.stat small{font-size:13px}.stat strong{font-size:29px}
+  .section-head h2{font-size:20px}.section-head p,.section-head>span,.section-head>a{font-size:13px;line-height:1.8}
+  .chapter-card h3{font-size:19px}.chapter-card .subtitle{font-size:12px;letter-spacing:0;text-transform:none}
+  .chapter-card p{font-size:14px;line-height:1.85}.card-bottom,.card-number{font-size:12px}
+  .row-text h3{font-size:16px;line-height:1.75}.row-text p,.row-tag,.row-index{font-size:12px}
+  .question-group h2{font-size:16px}.filter-tab{font-size:13px}
+  .reading-plan h3{font-size:16px}.reading-plan p,.reading-plan .button{font-size:13px;line-height:1.8}
+  .page-intro p{font-size:15px;line-height:1.9}.page-meta{font-size:13px}
+  .read-layout{grid-template-columns:minmax(0,820px) 224px;gap:28px;justify-content:center}
+  .reader{padding:38px 40px;letter-spacing:0;overflow-wrap:break-word}
+  .reader h1{font-size:28px;line-height:1.55;letter-spacing:0;margin:18px 0 28px}
+  .reader h2{font-size:19px;line-height:1.6;margin:34px 0 15px;font-weight:600}
+  .reader li{font-size:17px;line-height:1.95;margin:18px 0;padding-left:5px;color:#354238;font-weight:400}
+  .reader ol{padding-left:25px}
+  .answer-summary{font-size:17px;line-height:1.95;padding:20px 22px;color:#354a32}
+  .answer-summary strong{font-size:12px;line-height:1.8;letter-spacing:0;margin-bottom:9px;font-weight:600;color:#596e4f}
+  .reader .followup,.reader .pitfall{font-size:16px;line-height:1.95;padding:20px 22px;color:#39473a}
+  .reader .pitfall{color:#746038}
+  .reader pre{font-family:"Cascadia Code","SFMono-Regular",Consolas,"Handbook Sans",monospace;font-size:14px;line-height:1.8;padding:22px;letter-spacing:0}
+  .reader-top .eyebrow,.read-time,.reader-source p{font-size:12px;line-height:1.8}
+  .reader-source a{font-size:14px;line-height:1.9;padding:6px 0}
+  .check-button,.reader-pager a{font-size:13px;line-height:1.8}
+  .reader-bottom{flex-wrap:wrap;gap:14px}.reader-pager{gap:24px;margin-top:24px}
+  .toc{font-size:13px}.toc-heading,.toc-group,.toc small{font-size:12px}.toc a{font-size:13px;line-height:1.75;padding:9px 10px}
+  .sources-intro,.notice{font-size:15px;line-height:1.95}.source-chapter a{font-size:14px;line-height:1.85}.source-chapter small{font-size:12px}
+  .footer{font-size:12px;line-height:1.8;flex-wrap:wrap}.empty-state p{font-size:15px}
+  dialog p{font-size:14px;line-height:1.9}dialog label{font-size:13px}.dialog-note{font-size:12px!important}
+  [data-theme="dark"]{--ink:#e1e7e0}
+  [data-theme="dark"] .reader li,[data-theme="dark"] .reader .followup{color:#d0dbce}
+  [data-theme="dark"] .answer-summary{color:#dbe7d5}
+  [data-theme="dark"] .reader .pitfall{color:#e6d3ac}
+}
+@media screen and (max-width:1199px){.read-layout{display:block;max-width:820px;margin:auto}.toc{display:none}.reader{padding:34px 32px}}
+@media screen and (max-width:680px){
+  #main{padding:26px 16px 40px}.hero h1{font-size:30px}.hero p{font-size:15px}.hero-note{font-size:12px;gap:8px 12px}
+  .topbar{padding:0 14px}.theme-select,.export-button,.search-form input{font-size:12px}.theme-select{max-width:88px}.export-button{padding:9px 8px}
+  .chapter-grid{grid-template-columns:1fr;gap:14px}.chapter-card{padding:22px}.chapter-card p{min-height:0;font-size:14px}.chapter-card h3{font-size:19px}
+  .stat strong{font-size:24px}.stat p,.stat small{font-size:11px}.section-head>span{display:none}
+  .reading-plan{flex-wrap:wrap;padding:20px}.reading-plan h3{font-size:15px}
+  .question-row{padding:17px 15px;gap:10px}.row-text h3{font-size:15px}.row-text p{font-size:12px}.row-tag{font-size:11px}
+  .reader{padding:26px 20px}.reader h1{font-size:25px;line-height:1.55}.reader h2{font-size:18px;margin:30px 0 14px}
+  .reader li,.answer-summary,.reader .followup,.reader .pitfall{font-size:16px;line-height:1.95}
+  .answer-summary,.reader .followup,.reader .pitfall{padding:18px 16px}.reader ol{padding-left:22px}
+  .reader pre{font-size:13px;padding:18px}.reader-source a{font-size:13px}.reader-pager a{font-size:13px}
+  .sources-intro,.notice{font-size:14px}.filter-tab{font-size:12px;padding:7px 10px}.chapter-toolbar .button{font-size:12px}
+  .footer{font-size:11px}.section-head p{font-size:13px}
+}
