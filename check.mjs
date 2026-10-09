@@ -28,19 +28,22 @@ assert(app.includes('escapeHTML')&&app.includes('window.print()')&&app.includes(
 console.log('Verified 7 subjects, 140 unique complete answers, HTTPS references, 8 PDFs and browser script syntax.');
 const themeScript=await readFile('dist/theme.js','utf8');
 function themeFixture(stored,systemDark=false,storageDenied=false){
-  const root={dataset:{}},meta={},control={value:'',addEventListener:(_,fn)=>control.change=fn};
+  const root={dataset:{}},meta={};
+  const controls=['light','dark','system'].map(value=>({dataset:{themeChoice:value},pressed:''}));
+  controls.forEach(button=>{button.setAttribute=(_,v)=>button.pressed=v;button.addEventListener=(_,fn)=>button.click=fn;});
   const media={matches:systemDark,addEventListener:(_,fn)=>media.change=fn};
-  const context={window:{matchMedia:()=>media},document:{documentElement:root,querySelector:()=>meta,getElementById:()=>control,addEventListener:(_,fn)=>fn()},localStorage:{getItem:()=>{if(storageDenied)throw Error('blocked');return stored;},setItem:(_,v)=>{if(storageDenied)throw Error('blocked');stored=v;}}};
+  const context={window:{matchMedia:()=>media},document:{documentElement:root,querySelector:()=>meta,querySelectorAll:()=>controls,addEventListener:(_,fn)=>fn()},localStorage:{getItem:()=>{if(storageDenied)throw Error('blocked');return stored;},setItem:(_,v)=>{if(storageDenied)throw Error('blocked');stored=v;}}};
   runInNewContext(themeScript,context);
-  return{root,meta,control,media,saved:()=>stored};
+  return{root,meta,media,saved:()=>stored,choose:value=>controls.find(b=>b.dataset.themeChoice===value).click(),selected:()=>controls.filter(b=>b.pressed==='true').map(b=>b.dataset.themeChoice)};
 }
 const autoTheme=themeFixture(null);
 assert.equal(autoTheme.root.dataset.theme,'light');
 autoTheme.media.matches=true;autoTheme.media.change();assert.equal(autoTheme.root.dataset.theme,'dark');
-autoTheme.control.value='light';autoTheme.control.change();autoTheme.media.change();
+autoTheme.choose('light');autoTheme.media.change();
 assert.equal(autoTheme.root.dataset.theme,'light','Explicit light mode must override system dark mode');
-autoTheme.control.value='dark';autoTheme.control.change();assert.equal(autoTheme.saved(),'dark');
+autoTheme.choose('dark');assert.equal(autoTheme.saved(),'dark');assert.deepEqual(autoTheme.selected(),['dark']);
 assert.equal(themeFixture(autoTheme.saved()).root.dataset.theme,'dark','Manual choice must survive reload');
-assert.equal(themeFixture('invalid',true).control.value,'system');
+assert.deepEqual(themeFixture('invalid',true).selected(),['system']);
+autoTheme.choose('system');autoTheme.media.matches=false;autoTheme.media.change();assert.equal(autoTheme.root.dataset.theme,'light');assert.deepEqual(autoTheme.selected(),['system']);
 assert.equal(themeFixture(null,true,true).root.dataset.theme,'dark','Blocked storage must not prevent theme initialization');
 console.log('Verified system changes, manual overrides, saved theme reload, invalid preferences and unavailable storage.');

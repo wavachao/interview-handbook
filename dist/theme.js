@@ -8,16 +8,20 @@
     const dark = preference === 'dark' || (preference === 'system' && system.matches);
     document.documentElement.dataset.theme = dark ? 'dark' : 'light';
     document.querySelector('meta[name="theme-color"]').content = dark ? '#141a17' : '#245b49';
+    document.querySelectorAll('[data-theme-choice]').forEach(button => {
+      button.setAttribute('aria-pressed', String(button.dataset.themeChoice === preference));
+    });
   }
   apply(); // Apply before the first paint to avoid a light flash when opening dark mode.
   system.addEventListener('change', () => { if (preference === 'system') apply(); });
   document.addEventListener('DOMContentLoaded', () => {
-    const control = document.getElementById('theme-select');
-    control.value = preference;
-    control.addEventListener('change', () => {
-      preference = control.value;
-      try { localStorage.setItem('interview-theme', preference); } catch {}
-      apply();
+    apply();
+    document.querySelectorAll('[data-theme-choice]').forEach(button => {
+      button.addEventListener('click', () => {
+        preference = button.dataset.themeChoice;
+        try { localStorage.setItem('interview-theme', preference); } catch {}
+        apply();
+      });
     });
   });
 })();
