@@ -5,6 +5,7 @@
   <meta name="description" content="C++、数据结构、操作系统、计算机网络、计算机组成原理、MySQL、Redis 高频面试题。系统阅读、全文搜索与 PDF 导出。">
   <meta name="theme-color" content="#245b49"><title>面试手册 · 把基础，读成底气</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">跳到正文</a>
@@ -17,7 +18,7 @@
     <div class="side-bottom"><div class="progress-caption"><span>学习进度</span><strong id="progress-count">0 / 140</strong></div><div class="progress-track"><i id="progress-bar"></i></div><p>每天读一点，答案会更有把握。</p><button class="plain-button" id="reset-progress">重置学习进度</button><a class="sources-nav" href="#sources">参考来源与使用说明 ↗</a></div>
   </aside>
   <div class="workspace">
-    <header class="topbar"><button class="icon-button mobile-menu" id="menu-toggle" aria-label="打开目录" aria-controls="sidebar" aria-expanded="false">☰</button><div class="breadcrumb" id="breadcrumb">阅读空间 <span>/</span> 学习总览</div><div class="header-actions"><form class="search-form" id="search-form" role="search"><span aria-hidden="true">⌕</span><input type="search" id="search" aria-label="搜索所有面试题" placeholder="搜索问题、知识点…" autocomplete="off"><kbd>/</kbd></form><button class="button export-button" id="export-open"><span aria-hidden="true">↓</span> 导出 PDF</button></div></header>
+    <header class="topbar"><button class="icon-button mobile-menu" id="menu-toggle" aria-label="打开目录" aria-controls="sidebar" aria-expanded="false">☰</button><div class="breadcrumb" id="breadcrumb">阅读空间 <span>/</span> 学习总览</div><div class="header-actions"><form class="search-form" id="search-form" role="search"><span aria-hidden="true">⌕</span><input type="search" id="search" aria-label="搜索所有面试题" placeholder="搜索问题、知识点…" autocomplete="off"><kbd>/</kbd></form><select class="theme-select" id="theme-select" aria-label="颜色模式" title="颜色模式"><option value="system">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option></select><button class="button export-button" id="export-open"><span aria-hidden="true">↓</span> 导出 PDF</button></div></header>
     <main id="main" tabindex="-1"></main>
     <footer class="footer"><span>面试手册 · 让每一个知识点，都有来处。</span><span>整理于 2026.10 · <a href="#sources">阅读说明</a></span></footer>
   </div>
