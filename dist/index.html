@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="C++、数据结构、操作系统、计算机网络、计算机组成原理、MySQL、Redis 高频面试题。系统阅读、全文搜索与 PDF 导出。">
+  <meta name="theme-color" content="#245b49"><title>面试手册 · 把基础，读成底气</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">册</span><span>面试手册<small>THE INTERVIEW HANDBOOK</small></span></a>
+    <div class="side-heading">你的阅读空间</div>
+    <nav aria-label="阅读导航"><a class="nav-item" href="#home" data-nav="home"><span aria-hidden="true">▦</span> 学习总览</a><a class="nav-item" href="#saved" data-nav="saved"><span aria-hidden="true">☆</span> 我的收藏 <span id="saved-count" class="nav-count">0</span></a></nav>
+    <div class="side-heading chapter-label">知识目录 <span>07</span></div>
+    <nav id="chapter-nav" aria-label="科目目录"></nav>
+    <div class="side-bottom"><div class="progress-caption"><span>学习进度</span><strong id="progress-count">0 / 140</strong></div><div class="progress-track"><i id="progress-bar"></i></div><p>每天读一点，答案会更有把握。</p><button class="plain-button" id="reset-progress">重置学习进度</button><a class="sources-nav" href="#sources">参考来源与使用说明 ↗</a></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><button class="icon-button mobile-menu" id="menu-toggle" aria-label="打开目录" aria-controls="sidebar" aria-expanded="false">☰</button><div class="breadcrumb" id="breadcrumb">阅读空间 <span>/</span> 学习总览</div><div class="header-actions"><form class="search-form" id="search-form" role="search"><span aria-hidden="true">⌕</span><input type="search" id="search" aria-label="搜索所有面试题" placeholder="搜索问题、知识点…" autocomplete="off"><kbd>/</kbd></form><button class="button export-button" id="export-open"><span aria-hidden="true">↓</span> 导出 PDF</button></div></header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="footer"><span>面试手册 · 让每一个知识点，都有来处。</span><span>整理于 2026.10 · <a href="#sources">阅读说明</a></span></footer>
+  </div>
+  <dialog id="export-dialog" aria-labelledby="export-title"><form method="dialog"><button class="dialog-close icon-button" aria-label="关闭">×</button></form><span class="eyebrow">TAKE YOUR KNOWLEDGE WITH YOU</span><h2 id="export-title">把手册带走</h2><p>下载排版好的 PDF，离线复习也很方便。</p><label for="export-scope">导出范围</label><select id="export-scope"></select><a class="button primary download-link" id="download-pdf" download>↓ 下载 PDF</a><div class="dialog-divider"></div><button class="button print-button" id="print-selection">打印当前阅读内容</button><p class="dialog-note">可在浏览器打印窗口选择“另存为 PDF”。支持单题、搜索结果和收藏列表。</p></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div><div id="print-root"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
